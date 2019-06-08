@@ -9,7 +9,6 @@
                 <th>Productid</th>
                 <th>Model</th>
                 <th>Sku</th>
-                <th>Location</th>
                 <th>Quantity</th>
                 <th>Stockstatusid</th>
                 <th>Image</th>
@@ -18,7 +17,6 @@
                 <th>Price</th>
                 <th>Taxclassid</th>
                 <th>Dateavailable</th>
-                <th>Subtract</th>
                 <th>Minimum</th>
                 <th>Sortorder</th>
                 <th>Status</th>
@@ -34,7 +32,6 @@
                 <td><a href="{{ path('product_show', { 'productId': product.productId }) }}">{{ product.productId }}</a></td>
                 <td>{{ product.model }}</td>
                 <td>{{ product.sku }}</td>
-                <td>{{ product.location }}</td>
                 <td>{{ product.quantity }}</td>
                 <td>{{ product.stockStatusId }}</td>
                 <td>{{ product.image }}</td>
@@ -43,7 +40,6 @@
                 <td>{{ product.price }}</td>
                 <td>{{ product.taxClassId }}</td>
                 <td>{% if product.dateAvailable %}{{ product.dateAvailable|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if product.subtract %}Yes{% else %}No{% endif %}</td>
                 <td>{{ product.minimum }}</td>
                 <td>{{ product.sortOrder }}</td>
                 <td>{% if product.status %}Yes{% else %}No{% endif %}</td>

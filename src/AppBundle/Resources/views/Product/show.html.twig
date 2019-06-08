@@ -18,10 +18,6 @@
                 <td>{{ product.sku }}</td>
             </tr>
             <tr>
-                <th>Location</th>
-                <td>{{ product.location }}</td>
-            </tr>
-            <tr>
                 <th>Quantity</th>
                 <td>{{ product.quantity }}</td>
             </tr>
@@ -52,10 +48,6 @@
             <tr>
                 <th>Dateavailable</th>
                 <td>{% if product.dateAvailable %}{{ product.dateAvailable|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Subtract</th>
-                <td>{% if product.subtract %}Yes{% else %}No{% endif %}</td>
             </tr>
             <tr>
                 <th>Minimum</th>

@@ -37,7 +37,7 @@ class Builder implements ContainerAwareInterface
 
         foreach ($menu as $child) {
             $child->setLinkAttribute('class', 'nav-link')
-                ->setAttribute('class', 'nav-item active');
+                ->setAttribute('class', 'nav-item');
         }
 
         return $menu;

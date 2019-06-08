@@ -26,7 +26,7 @@ class ProductController extends Controller
 
         $products = $em->getRepository('AppBundle:Product')->findAll();
 
-        return $this->render('product/index.html.twig', array(
+        return $this->render('@App/Product/index.html.twig', array(
             'products' => $products,
         ));
     }
@@ -51,7 +51,7 @@ class ProductController extends Controller
             return $this->redirectToRoute('product_show', array('productId' => $product->getProductid()));
         }
 
-        return $this->render('product/new.html.twig', array(
+        return $this->render('@App/Product/new.html.twig', array(
             'product' => $product,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class ProductController extends Controller
     {
         $deleteForm = $this->createDeleteForm($product);
 
-        return $this->render('product/show.html.twig', array(
+        return $this->render('@App/Product/show.html.twig', array(
             'product' => $product,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class ProductController extends Controller
             return $this->redirectToRoute('product_edit', array('productId' => $product->getProductid()));
         }
 
-        return $this->render('product/edit.html.twig', array(
+        return $this->render('@App/Product/edit.html.twig', array(
             'product' => $product,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
