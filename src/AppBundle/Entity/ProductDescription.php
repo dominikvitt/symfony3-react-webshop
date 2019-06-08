@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class ProductDescription
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="product_id", type="integer", nullable=false)
      * @ORM\Id
@@ -22,7 +22,7 @@ class ProductDescription
     private $productId;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="language_id", type="integer", nullable=false)
      * @ORM\Id
@@ -53,4 +53,3 @@ class ProductDescription
 
 
 }
-

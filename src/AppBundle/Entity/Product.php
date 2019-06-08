@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Product
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="product_id", type="integer", nullable=false)
      * @ORM\Id
@@ -43,91 +43,91 @@ class Product
     private $location;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="quantity", type="integer", nullable=false)
      */
     private $quantity = '0';
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="stock_status_id", type="integer", nullable=false)
      */
     private $stockStatusId;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="manufacturer_id", type="integer", nullable=false)
      */
     private $manufacturerId;
 
     /**
-     * @var boolean
+     * @var int
      *
-     * @ORM\Column(name="shipping", type="boolean", nullable=false)
+     * @ORM\Column(name="shipping", type="integer", nullable=false)
      */
-    private $shipping = '1';
+    private $shipping;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="decimal", precision=15, scale=4, nullable=false)
+     * @ORM\Column(name="price", type="decimal", precision=15, scale=4, nullable=false, options={"default"="0.0000"})
      */
     private $price = '0.0000';
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="tax_class_id", type="integer", nullable=false)
      */
     private $taxClassId;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      *
-     * @ORM\Column(name="date_available", type="date", nullable=false)
+     * @ORM\Column(name="date_available", type="datetime", nullable=true)
      */
-    private $dateAvailable = '0000-00-00';
+    private $dateAvailable;
 
     /**
-     * @var boolean
+     * @var int
      *
-     * @ORM\Column(name="subtract", type="boolean", nullable=false)
+     * @ORM\Column(name="subtract", type="integer", nullable=false, options={"default"="1"})
      */
     private $subtract = '1';
 
     /**
-     * @var integer
+     * @var int
      *
-     * @ORM\Column(name="minimum", type="integer", nullable=false)
+     * @ORM\Column(name="minimum", type="integer", nullable=false, options={"default"="1"})
      */
     private $minimum = '1';
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="sort_order", type="integer", nullable=false)
      */
     private $sortOrder = '0';
 
     /**
-     * @var boolean
+     * @var int
      *
-     * @ORM\Column(name="status", type="boolean", nullable=false)
+     * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status = '0';
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="viewed", type="integer", nullable=false)
      */
@@ -330,7 +330,7 @@ class Product
     /**
      * Set shipping.
      *
-     * @param bool $shipping
+     * @param int $shipping
      *
      * @return Product
      */
@@ -344,7 +344,7 @@ class Product
     /**
      * Get shipping.
      *
-     * @return bool
+     * @return int
      */
     public function getShipping()
     {
@@ -402,11 +402,11 @@ class Product
     /**
      * Set dateAvailable.
      *
-     * @param \DateTime $dateAvailable
+     * @param \DateTime|null $dateAvailable
      *
      * @return Product
      */
-    public function setDateAvailable($dateAvailable)
+    public function setDateAvailable($dateAvailable = null)
     {
         $this->dateAvailable = $dateAvailable;
 
@@ -416,7 +416,7 @@ class Product
     /**
      * Get dateAvailable.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateAvailable()
     {
@@ -426,7 +426,7 @@ class Product
     /**
      * Set subtract.
      *
-     * @param bool $subtract
+     * @param int $subtract
      *
      * @return Product
      */
@@ -440,7 +440,7 @@ class Product
     /**
      * Get subtract.
      *
-     * @return bool
+     * @return int
      */
     public function getSubtract()
     {
@@ -498,7 +498,7 @@ class Product
     /**
      * Set status.
      *
-     * @param bool $status
+     * @param int $status
      *
      * @return Product
      */
@@ -512,7 +512,7 @@ class Product
     /**
      * Get status.
      *
-     * @return bool
+     * @return int
      */
     public function getStatus()
     {

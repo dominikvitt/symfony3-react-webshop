@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Language
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="language_id", type="integer", nullable=false)
      * @ORM\Id
@@ -43,14 +43,14 @@ class Language
     private $locale;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="sort_order", type="integer", nullable=false)
      */
     private $sortOrder = '0';
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="status", type="boolean", nullable=false)
      */
@@ -58,4 +58,3 @@ class Language
 
 
 }
-

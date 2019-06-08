@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Product</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Productid</th>
+                <td>{{ product.productId }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ product.model }}</td>
+            </tr>
+            <tr>
+                <th>Sku</th>
+                <td>{{ product.sku }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ product.location }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ product.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Stockstatusid</th>
+                <td>{{ product.stockStatusId }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ product.image }}</td>
+            </tr>
+            <tr>
+                <th>Manufacturerid</th>
+                <td>{{ product.manufacturerId }}</td>
+            </tr>
+            <tr>
+                <th>Shipping</th>
+                <td>{% if product.shipping %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th>Taxclassid</th>
+                <td>{{ product.taxClassId }}</td>
+            </tr>
+            <tr>
+                <th>Dateavailable</th>
+                <td>{% if product.dateAvailable %}{{ product.dateAvailable|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Subtract</th>
+                <td>{% if product.subtract %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Minimum</th>
+                <td>{{ product.minimum }}</td>
+            </tr>
+            <tr>
+                <th>Sortorder</th>
+                <td>{{ product.sortOrder }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{% if product.status %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Viewed</th>
+                <td>{{ product.viewed }}</td>
+            </tr>
+            <tr>
+                <th>Dateadded</th>
+                <td>{% if product.dateAdded %}{{ product.dateAdded|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datemodified</th>
+                <td>{% if product.dateModified %}{{ product.dateModified|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('product_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('product_edit', { 'productId': product.productId }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
