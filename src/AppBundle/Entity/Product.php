@@ -36,13 +36,6 @@ class Product
     private $sku;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="location", type="string", length=128, nullable=false)
-     */
-    private $location;
-
-    /**
      * @var int
      *
      * @ORM\Column(name="quantity", type="integer", nullable=false)
@@ -97,13 +90,6 @@ class Product
      * @ORM\Column(name="date_available", type="datetime", nullable=true)
      */
     private $dateAvailable;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="subtract", type="integer", nullable=false, options={"default"="1"})
-     */
-    private $subtract = '1';
 
     /**
      * @var int
@@ -205,30 +191,6 @@ class Product
     public function getSku()
     {
         return $this->sku;
-    }
-
-    /**
-     * Set location.
-     *
-     * @param string $location
-     *
-     * @return Product
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-
-        return $this;
-    }
-
-    /**
-     * Get location.
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
     }
 
     /**
@@ -421,30 +383,6 @@ class Product
     public function getDateAvailable()
     {
         return $this->dateAvailable;
-    }
-
-    /**
-     * Set subtract.
-     *
-     * @param int $subtract
-     *
-     * @return Product
-     */
-    public function setSubtract($subtract)
-    {
-        $this->subtract = $subtract;
-
-        return $this;
-    }
-
-    /**
-     * Get subtract.
-     *
-     * @return int
-     */
-    public function getSubtract()
-    {
-        return $this->subtract;
     }
 
     /**
