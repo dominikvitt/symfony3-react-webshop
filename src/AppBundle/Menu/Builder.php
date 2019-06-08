@@ -13,7 +13,8 @@ class Builder implements ContainerAwareInterface
     public function mainMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-
+        $menu->setChildrenAttribute('class', 'nav nav-pills');
+        
         $menu->addChild('Home', ['route' => 'homepage']);
 
         // access services from the container!
@@ -26,11 +27,18 @@ class Builder implements ContainerAwareInterface
             'routeParameters' => ['id' => $blog->getId()]
         ]);*/
 
-        $menu->addChild('Sell', ['route' => 'sell']);
+        $menu->addChild('Products', ['route' => 'product_index']);
+        //$menu->addChild('Login', ['route' => 'login']);
         // you can also add sub levels to your menus as follows
-        $menu['login']->addChild('Login', ['route' => 'login']);
+        //$menu['Login']->addChild('Login', ['route' => 'login']);
+        //$menu['Login']->addChild('Logout', ['route' => 'logout']);
 
         // ... add more children
+
+        foreach ($menu as $child) {
+            $child->setLinkAttribute('class', 'nav-link')
+                ->setAttribute('class', 'nav-item active');
+        }
 
         return $menu;
     }
