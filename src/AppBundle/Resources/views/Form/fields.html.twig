@@ -1,0 +1,12 @@
+{% extends 'bootstrap_4_layout.html.twig' %}
+
+{% block file_widget %}
+    {% spaceless %}
+
+    {{ block('form_widget') }}
+    {% if image_url is not null %}
+        <img src="{{ asset(image_url) }}" width="250" heigth="250" hspace="20" vspace="20"/>
+    {% endif %}
+
+    {% endspaceless %}
+{% endblock %}

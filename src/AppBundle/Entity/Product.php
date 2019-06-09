@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Lib\Globals;
 
 /**
  * Product
@@ -40,7 +41,7 @@ class Product
      *
      * @ORM\Column(name="quantity", type="integer", nullable=false)
      */
-    private $quantity = '0';
+    private $quantity;
 
     /**
      * @var int
@@ -527,5 +528,17 @@ class Product
     public function getDateModified()
     {
         return $this->dateModified;
+    }
+
+    /**
+     * Get the image URL
+     *
+     * @return null|string
+     */
+    public function getImagePath()
+    {
+        // ... $webPath being the full image URL, to be used in templates
+
+        return Globals::getUploadDir().'/'.$this->getImage();
     }
 }

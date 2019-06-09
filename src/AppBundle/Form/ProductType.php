@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -28,7 +29,15 @@ class ProductType extends AbstractType
                 'No' => 0,
             ],
         ])
-        ->add('image')
+        ->add('image',FileType::class, array(
+            'image_property' => 'imagePath',
+            'data_class' => null,
+            'multiple'    => false,
+            'attr' => array(
+                'accept' => 'image/*',
+                )
+            )
+        )
         ->add('manufacturerId', EntityType::class, [
             'class' => Manufacturer::class,
             'choice_label' => 'name',
@@ -43,11 +52,12 @@ class ProductType extends AbstractType
         ])
         ->add('dateAvailable')
         ->add('minimum')
-        ->add('sortOrder')
-        ->add('status')
-        ->add('viewed')
-        ->add('dateAdded')
-        ->add('dateModified');
+        ->add('status', ChoiceType::class, [
+            'choices'  => [
+                'Enabled' => 1,
+                'Disabled' => 0,
+            ],
+        ]);
     }/**
      * {@inheritdoc}
      */

@@ -94,4 +94,8 @@ class TaxClass
     {
         return $this->percentage;
     }
+
+    public function __toString() {
+        return (string)$this->id;
+    }
 }
