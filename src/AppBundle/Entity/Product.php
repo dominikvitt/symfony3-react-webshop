@@ -73,9 +73,9 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="decimal", precision=15, scale=4, nullable=false, options={"default"="0.0000"})
+     * @ORM\Column(name="price", type="decimal", precision=15, scale=4, nullable=false)
      */
-    private $price = '0.0000';
+    private $price;
 
     /**
      * @var int
