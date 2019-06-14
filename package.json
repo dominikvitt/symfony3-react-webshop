@@ -3,11 +3,20 @@
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "webpack": "^4.34.0",
+    "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "encore": "^0.0.30-beta",
     "reactstrap": "^8.0.0"
-  }
+  },
+  "name": "symfony3-react-webshop",
+  "version": "1.0.0",
+  "description": "Symfony 3.4 webshop with React frontend",
+  "main": "index.js",
+  "repository": "https://github.com/dominikvitt/symfony3-react-webshop.git",
+  "author": "Dominik Vitt <dominik.vitt.hr@gmail.com>",
+  "license": "MIT"
 }

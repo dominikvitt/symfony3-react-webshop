@@ -48,3 +48,4 @@
 /.web-server-pid
 .vscode/
 node_modules/
+npm-debug.log
