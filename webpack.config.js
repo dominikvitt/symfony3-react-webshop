@@ -1,14 +1,30 @@
-var Encore = require('@symfony/webpack-encore');
+'use strict'
 
-Encore
-    // directory where compiled assets will be stored
-    .setOutputPath('assets/build/')
-    // public path used by the web server to access the output path
-    .setPublicPath('/build')
-
-    .addEntry('app', '/assets/js/app.js')
-
-    // ...
-;
-
-// ...
+module.exports = {
+  entry: __dirname + '/assets/js/app.js',
+  output: {
+    path: __dirname + '/build/js/',
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      },
+      { test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
+};

@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
     "@symfony/webpack-encore": "^0.27.0",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.7.2",
@@ -19,5 +20,14 @@
   "main": "index.js",
   "repository": "https://github.com/dominikvitt/symfony3-react-webshop.git",
   "author": "Dominik Vitt <dominik.vitt.hr@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  }
 }
