@@ -3,10 +3,6 @@
 
  import { Button, Form, FormGroup, Label, Alert, Input } from 'reactstrap';
 
- import { APP } from "../util";
-
- import axios from 'axios';
-
  
 
  
@@ -88,7 +84,7 @@
      }
 
 
-    _uploadToServer(body) {
+    _uploadToServer() { /*
         axios.post(`${APP.BASE_URL}/${APP.CREATE_PRODUCT_URL}`, body)
             .then(response => {
                 this.setState({
@@ -97,14 +93,14 @@
                     error: false,
                     errorMessage: ''
                 });
-                this.props.addProduct(response.data)
+                //this.props.addProduct(response.data)
             }).catch(err => {
             this.setState({
                 isLoading: false,
                 error: true,
                 errorMessage: err.errors
             });
-        });
+        }); */
     }
 
  

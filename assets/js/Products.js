@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import ProductForm from './ProductForm';
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, Container, Button, Alert,Row, Col, Badge  } from 'reactstrap';
-import { APP } from '../util'
+import { Card, CardImg, CardText, CardBody, CardTitle, Container, Alert,Row, Col, Badge  } from 'reactstrap';
 import Favorite from './Favorite';
-import axios from 'axios';
 
 class Products extends Component {
 
@@ -33,12 +30,12 @@ class Products extends Component {
     }
 
     getProducts() {
-        if (!this.state.products) {
+        /* if (!this.state.products) {
             this.setState({ isLoading: true });
             axios.get(`${APP.BASE_URL}/${APP.PRODUCTS_URL}`).then(response => {
                 this.setState({ products: response.data, isLoading: false });
-            }).catch(err => { this.setState({ isLoading: false}); console.log(err) })
-        }
+            }).catch(err => { this.setState({ isLoading: false}); })
+        } */
     }
 
     addProduct(product) {
