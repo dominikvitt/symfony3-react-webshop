@@ -37,12 +37,16 @@
   "repository": "https://github.com/dominikvitt/symfony3-react-webshop.git",
   "author": "Dominik Vitt <dominik.vitt.hr@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "lint": "eslint assets/js"
-  },
-  "babel": {
+"babel": {
     "presets": [
-      "@babel/react"
+        "@babel/react"
     ]
+},
+"scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress",
+    "lint": "eslint assets/js"
   }
 }
