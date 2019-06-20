@@ -4,8 +4,8 @@ module.exports = {
 	entry: './assets/js/app.js',
 	mode: 'development',
 	output: {
-		filename: '.main.js',
-		path: path.resolve(__dirname, 'assets/build/')
+		filename: 'app.js',
+		path: path.resolve(__dirname, './web/js/')
 	},
 	module: {		
         rules: [{			
