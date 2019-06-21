@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container } from 'reactstrap';
-//import Navbar from './components/Navbar';
-//import Products from './components/Products';
+import Navbar from './components/Navbar';
+import Products from './components/Products';
 
 
 class App extends React.Component {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ProductForm from './ProductForm';
 import { Card, CardImg, CardText, CardBody, CardTitle, Container, Alert,Row, Col, Badge  } from 'reactstrap';
-import Favorite from './Favorite';
 
 class Products extends Component {
 
