@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ProductForm from './ProductForm';
 import { Card, CardImg, CardText, CardBody, CardTitle, Container, Alert,Row, Col, Badge  } from 'reactstrap';
+import axios from 'axios';
+import { APP } from '../../../node_modules/util';
 
 class Products extends Component {
 
@@ -10,8 +12,8 @@ class Products extends Component {
             products: null,
             isLoading: null
         };
-        this.addProduct = this.addProduct.bind(this);
-        this.favoriteIncrease = this.favoriteIncrease.bind(this);
+        //this.addProduct = this.addProduct.bind(this);
+        //this.favoriteIncrease = this.favoriteIncrease.bind(this);
         this.getProducts = this.getProducts.bind(this);
     }
 
@@ -29,12 +31,13 @@ class Products extends Component {
     }
 
     getProducts() {
-        /* if (!this.state.products) {
+        if (!this.state.products) {
             this.setState({ isLoading: true });
-            axios.get(`${APP.BASE_URL}/${APP.PRODUCTS_URL}`).then(response => {
+            console.log(this.state);
+            axios.get('test').then(response => {
                 this.setState({ products: response.data, isLoading: false });
             }).catch(err => { this.setState({ isLoading: false}); })
-        } */
+        } 
     }
 
     addProduct(product) {
