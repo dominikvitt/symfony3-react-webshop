@@ -28,7 +28,9 @@
         "symfony/symfony": "3.4.*",
         "symfony/webpack-encore-bundle": "*",
         "twig/twig": "^1.0||^2.0",
-        "symfony/flex": "*"
+        "symfony/flex": "*",
+        "symfony/serializer": "*",
+        "friendsofsymfony/rest-bundle": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
